@@ -23,7 +23,7 @@ async function renderPokemon(response) {
     pokemonTypeContainer.style.backgroundColor = 'chocolate';
     pokemonTypeContainer.style.borderRadius = '10px';
   
-    // Style the Tite Container
+    // Style the Title Container
     pokemonTitleContainer.style.display = 'flex';
     pokemonTitleContainer.style.justifyContent = 'space-between';
   
