@@ -60,3 +60,96 @@ function printingWithRestOperator(...arrayOfParameters) {
     })
 }
 printingWithRestOperator(0,1,2,4,8);
+
+// console.log(document) // This is going to fail in Node but not in the browser's
+
+console.log('----- Export examples');
+
+// Exporting as JS OLD
+
+// const sum = require('./library');
+// console.log(sum(1, 2));
+
+// Exporting as JS NEW module
+
+import {sum, substract as less} from './library.js';
+console.log(sum(1, 2));
+console.log(less(2, 1));
+
+import fetch from 'node-fetch';
+fetch('http://google.com')
+  .then(response => console.log(response.status))
+
+console.log('----Classes');
+
+class Triangle {
+  sideA;
+  sideB;
+  hipotenuse;
+  constructor(sideA, sideB=1) {
+    // hipotenuse = sideA^2 + sideB^2; // imagine that we need the square root
+  }
+}
+
+const newTriangle = new Triangle(5, 6);
+
+class Mammal {
+  numberOfLegs = 4;
+  colorOfHair;
+  lengthOfHair;
+  constructor() {
+    this.actions = ['breed']
+  }
+}
+
+class Dog extends Mammal {
+  name;
+  colorOfHair = 'black';
+  constructor(name, colorOfHair) {
+    super();
+    this.name = name;
+    this.colorOfHair = colorOfHair;
+    this.action = ['barks', 'breeds', 'runs towards cars'];
+  }
+  // Non static function
+  barks() {
+    console.log(`${this.name} barks!!`);
+  }
+  // Static function
+  static className() {
+    console.log('This class is a DOG class');
+  }
+}
+
+const dog0 = new Dog('Spike');
+// dog0.name = 'Spike';
+dog0.colorOfHair = 'white';
+dog0.barks();
+dog0.barks();
+
+// non static
+// dog0.className();
+// static
+Dog.className();
+
+const dog1 = new Dog('scooby doo');
+// dog1.name = 'scooby doo';
+
+console.log(dog0);
+console.log(dog1);
+
+const pokemonPikachu = {
+  id: 1,
+  pokemonName: 'pikachu',
+  abilities: [],
+  envolvesTo: 2
+}
+
+console.log(pokemonPikachu);
+
+const pokemonRaichu = {
+  id: 2,
+  pokemonName: 'raichu',
+  abilities: [],
+  envolvesTo: undefined
+}
