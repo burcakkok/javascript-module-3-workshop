@@ -24,7 +24,9 @@
  */
 
 // Finish the code of the function
-function exercise05() {}
+function exercise05([first, second = "DEFAULT", third]) {
+    return second;
+}
 
 // Don’t change the code bellow this line
 export default exercise05;
